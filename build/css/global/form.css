@@ -1,0 +1,57 @@
+.nav-steps {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.nav-steps .thumbnail {
+  margin-bottom: 0;
+}
+
+.nav-steps .thumbnail>li>a>h4,
+.nav-steps .thumbnail>li>a>p {
+  font-family: 'ZapfHumnst BT', 'Arial';
+}
+
+.palette-box,
+.input-box {
+  border: 1px solid #bdb7b1;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: normal;
+  height: 100px;
+  margin-right: 10px;
+  position: relative;
+  width: 120px;
+}
+
+.palette-box input[type=radio],
+.input-box input[type=checkbox] {
+  display: none;
+}
+
+.palette-box input[type=radio]:checked+.palette-box-overlay,
+.input-box input[type=checkbox]:checked+.input-box-overlay {
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.palette-box-header,
+.input-box-header {
+  font-size: 12px;
+  padding: 1px 5px;
+  position: absolute;
+  top: 0;
+}
+
+.palette-box-overlay,
+.input-box-overlay {
+  background: rgba(255, 255, 255, 0.8);
+  color: #3d9970;
+  display: none;
+  font-size: 35px;
+  padding-top: 20px;
+  text-align: center;
+}

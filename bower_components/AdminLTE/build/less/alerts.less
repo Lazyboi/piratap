@@ -1,0 +1,53 @@
+/*
+ * Component: alert
+ * ----------------
+ */
+
+.alert {
+  margin-bottom: 7px;
+  .border-radius(0px);
+  h4 {
+    font-family: @primary-font;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 13px;
+  }
+  .icon {
+    margin-right: 10px;
+  }
+  .close {
+    color: #fff;
+    font-size: 12px;
+    font-weight: normal;
+    opacity: 1;
+    text-shadow: none;
+  }
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
+//Alert Variants
+.alert-success {
+  &:extend(.bg-olive);
+  border-color: darken(@olive, 5%);
+}
+
+.alert-danger,
+.alert-error {
+  &:extend(.bg-harvard-red);
+  border-color: darken(@harvard-red, 5%);
+}
+
+.alert-warning {
+  &:extend(.bg-lpu-gold);
+  border-color: darken(@lpu-gold, 5%);
+}
+
+.alert-info {
+  &:extend(.bg-aqua);
+  border-color: darken(@aqua, 5%);
+}

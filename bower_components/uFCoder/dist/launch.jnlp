@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jnlp href="launch.jnlp" spec="1.0+">
+    <information>
+        <title>uFrSimple</title>
+        <vendor>D-Logic</vendor>
+        <homepage href=""/>
+        <description>uFrSimple</description>
+        <description kind="short">uFrSimple</description>
+    </information>
+<update check="always"/>
+<security>
+<all-permissions/>
+</security>
+    <resources>
+<j2se java-vm-args="-Djava.security.policy=applet.policy" version="1.7+"/>
+<jar href="uFrSimple.jar" main="true"/>
+    <jar href="lib/jna.jar"/>
+</resources>
+    <applet-desc height="600" main-class="UFrSimple.UfrSimple" name="uFrSimple" width="557">
+    </applet-desc>
+</jnlp>

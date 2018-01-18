@@ -1,0 +1,45 @@
+/*
+ * Page: Profile
+ * -------------
+ */
+
+.profile-user-img {
+  margin: 0 auto;
+  width: 150px;
+  border: 1px solid #ddd;
+}
+
+.profile-upload {
+  margin-top: 10px;
+  text-align: center;
+  > form {
+    > input[type=file] {
+      display: inline;
+    }
+    .btn {
+      margin-bottom: 3px;
+    }
+  }
+}
+
+.profile-username {
+  font-family: @primary-font;
+  font-size: 17px;
+  margin-top: 7px;
+  margin-bottom: 12px;
+}
+
+.post {
+  border-bottom: 1px solid @gray-lte;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  color: #666;
+  &:last-of-type {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .user-block {
+    margin-bottom: 15px;
+  }
+}

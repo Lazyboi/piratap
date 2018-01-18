@@ -1,0 +1,28 @@
+# Declare Environments
+SetEnvIf Request_URI "^.*" SERVER=localhost
+
+# Rewrite Rules
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^([^/]+)/?$ index.php?8b04d5e3775d298e78455efc5ca404d5=$1 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^([^/]+)/([^/]+)/?$ index.php?8b04d5e3775d298e78455efc5ca404d5=$1&a9f0e61a137d86aa9db53465e0801612=$2 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/?$ index.php?8b04d5e3775d298e78455efc5ca404d5=$1&a9f0e61a137d86aa9db53465e0801612=$2&dd5c8bf51558ffcbe5007071908e9524=$3 [L,QSA]
+
+# Error Redirection
+ErrorDocument 403 http://%{ENV:SERVER}
+ErrorDocument 404 http://%{ENV:SERVER}
+
+# Prevent Directory Listing
+Options -Indexes

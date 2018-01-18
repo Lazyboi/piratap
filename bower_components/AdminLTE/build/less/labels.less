@@ -1,0 +1,38 @@
+/*
+ * Component: Label
+ * ----------------
+ */
+.label {
+  display: inline-block;
+  line-height: 1.25;
+  margin-bottom: 5px;
+  padding: 4px 4px 3px 4px;
+  text-align: center;
+  white-space: normal;
+  font-family: inherit;
+}
+
+.label-default {
+  background-color: @university-grey;
+  color: #444;
+}
+
+.label-danger {
+  &:extend(.bg-harvard-red);
+}
+
+.label-info {
+  &:extend(.bg-aqua);
+}
+
+.label-warning {
+  &:extend(.bg-lpu-gold);
+}
+
+.label-primary {
+  &:extend(.bg-light-blue);
+}
+
+.label-success {
+  &:extend(.bg-harvard-red);
+}

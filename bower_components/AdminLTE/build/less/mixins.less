@@ -1,0 +1,327 @@
+//AdminLTE mixins
+//===============
+
+//Changes the color and the hovering properties of the navbar
+.navbar-variant(@primary-color; @color: rgba(255, 255, 255, 0.8); @font-color: #777; @hover-color: #f6f6f6; @hover-bg: rgba(0, 0, 0, 0.1); @border-bottom-color: #d2d6de; @border-bottom-width: 1px) {
+  background-color: @color;
+  border-bottom: @border-bottom-width solid @border-bottom-color;
+  //Navbar links
+  .nav > li > a {
+    color: @font-color;
+    transition: all 0.2s;
+  }
+
+  .nav > li > a:hover,
+  .nav > li > a:active,
+  .nav > li > a:focus,
+  .nav .open > a,
+  .nav .open > a:hover,
+  .nav .open > a:focus,
+  .nav > .active > a {
+    background: @primary-color;
+    color: @color;
+  }
+
+  //Add color to the sidebar toggle button
+  .sidebar-toggle {
+    &:before {
+      color: #777;
+    }
+    &:hover {
+      &:before {
+        color: @color;
+      }
+      background: @primary-color;
+    }
+  }
+}
+
+//Logo color variation
+.logo-variant(@bg-color; @color: #fff; @border-bottom-color: #fff; @border-bottom-width: 1px) {
+  color: @color;
+  border-bottom: @border-bottom-width solid fade(@border-bottom-color, 20%);
+
+  &:hover {
+    //background-color: darken(@bg-color, 1%);
+  }
+
+  @media (max-width: @screen-xs-max) {
+    background-color: @bg-color;
+    border-bottom: none;
+  }
+}
+
+//Box solid color variation creator
+.box-solid-variant(@color; @text-color: #fff) {
+  .box-solid {
+    > .box-header {
+      color: @text-color;
+      background: @color;
+      background-color: @color;
+      a,
+      .btn {
+        color: @text-color;
+      }
+    }
+  }
+}
+
+//Nav tabs color variation creator
+.nav-tabs-custom-variant(@color) {
+  .nav-tabs-custom {
+    > .nav-tabs {
+      > li.active {
+        border-top-color: @color;
+      }
+    }
+  }
+}
+
+//Direct Chat Variant
+.direct-chat-variant(@bg-color; @color: #fff) {
+  .right > .direct-chat-text {
+    background: @bg-color;
+    border-color: @bg-color;
+    color: @color;
+    &:after,
+    &:before {
+      border-left-color: @bg-color;
+    }
+  }
+}
+
+//border radius creator
+.border-radius(@radius) {
+  border-radius: @radius;
+}
+
+//Different radius each side
+.border-radius(@top-left;
+@top-right
+;
+@bottom-left
+;
+@bottom-right
+)
+{
+  border-top-left-radius: @top-left
+;
+  border-top-right-radius: @top-right
+;
+  border-bottom-right-radius: @bottom-right
+;
+  border-bottom-left-radius: @bottom-left
+;
+}
+
+//Gradient background
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+  background: @color;
+  background: -webkit-gradient(linear,
+  left bottom,
+  left top,
+  color-stop(0, @start),
+  color-stop(1, @stop));
+  background: -ms-linear-gradient(bottom,
+  @start,
+  @stop);
+  background: -moz-linear-gradient(center bottom,
+  @start 0%,
+  @stop 100%);
+  background: -o-linear-gradient(@stop,
+  @start);
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+
+//Added 2.1.0
+//Skins Mixins
+
+//Dark Sidebar Mixin
+.skin-dark-sidebar(@color) {
+  // Sidebar background color (Both .wrapper and .left-side are responsible for sidebar bg color)
+  .wrapper,
+  .main-sidebar,
+  .left-side {
+    background-color: @color;
+  }
+  //User Panel (resides in the sidebar)
+  .user-panel {
+    > .info, > .info > a {
+      color: #bb1313;
+    }
+  }
+  //Sidebar Menu. First level links
+  .sidebar-menu > li {
+    //Section Headning
+    &.header,
+    .treeview-header {
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: underline;
+      margin: 15px 0 15px;
+    }
+    //Hover and active states
+    &:hover > a, &.active > a {
+      font-weight: bold;
+    }
+  }
+  //All links within the sidebar menu
+  .sidebar a {
+    color: #fff;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  //All submenus
+  .treeview-menu {
+    > li {
+      &.active > a, > a:hover {
+        font-weight: bold;
+      }
+    }
+  }
+  //The sidebar search form
+  .sidebar-form {
+    .border-radius(3px);
+    border: 0px solid lighten(@sidebar-dark-bg, 10%);
+    margin: 10px 10px;
+    input[type="text"], .btn {
+      box-shadow: none;
+      background-color: lighten(@sidebar-dark-bg, 10%);
+      border: 1px solid transparent;
+      height: 35px;
+      //.transition(all @transition-speed @transition-fn);
+    }
+    input[type="text"] {
+      color: #666;
+      .border-radius(2px, 0, 2px, 0);
+      &:focus,
+      &:focus + .input-group-btn .btn {
+        background-color: #fff;
+        color: #666;
+      }
+      &:focus + .input-group-btn .btn {
+        border-left-color: #fff;
+
+      }
+    }
+    .btn {
+      color: #999;
+      .border-radius(0, 2px, 0, 2px);
+    }
+  }
+}
+
+//Light Sidebar Mixin
+.skin-light-sidebar(@icon-active-color) {
+  // Sidebar background color (Both .wrapper and .left-side are responsible for sidebar bg color)
+  .wrapper,
+  .main-sidebar,
+  .left-side {
+    background-color: @sidebar-light-bg;
+  }
+  .content-wrapper,
+  .main-footer {
+    border-left: 1px solid @gray-lte;
+  }
+  //User Panel (resides in the sidebar)
+  .user-panel {
+    > .info, > .info > a {
+      color: @sidebar-light-color;
+    }
+  }
+  //Sidebar Menu. First level links
+  .sidebar-menu > li {
+    .transition(border-left-color .3s ease);
+    //border-left: 3px solid transparent;
+    //Section Headning
+    &.header {
+      color: lighten(@sidebar-light-color, 25%);
+      background: @sidebar-light-bg;
+    }
+    //links
+    > a {
+      border-left: 3px solid transparent;
+      font-weight: 600;
+    }
+    //Hover and active states
+    &:hover > a,
+    &.active > a {
+      color: @sidebar-light-hover-color;
+      background: @sidebar-light-hover-bg;
+    }
+    &:hover > a {
+
+    }
+    &.active {
+      border-left-color: @icon-active-color;
+      > a {
+        font-weight: 600;
+      }
+    }
+    //First Level Submenu
+    > .treeview-menu {
+      background: @sidebar-light-submenu-bg;
+    }
+  }
+  //All links within the sidebar menu
+  .sidebar a {
+    color: @sidebar-light-color;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  //All submenus
+  .treeview-menu {
+    > li {
+      > a {
+        color: @sidebar-light-submenu-color;
+      }
+      &.active > a,
+      > a:hover {
+        color: @sidebar-light-submenu-hover-color;
+      }
+      &.active > a {
+        font-weight: 600;
+      }
+    }
+  }
+  //The sidebar search form
+  .sidebar-form {
+    .border-radius(3px);
+    border: 0px solid @gray-lte;  //darken(@sidebar-light-bg, 5%);
+    margin: 10px 10px;
+    input[type="text"],
+    .btn {
+      box-shadow: none;
+      background-color: #fff; //darken(@sidebar-light-bg, 3%);
+      border: 1px solid transparent;
+      height: 35px;
+      //.transition(all @transition-speed @transition-fn);
+    }
+    input[type="text"] {
+      color: #666;
+      .border-radius(2px, 0, 2px, 0);
+      &:focus,
+      &:focus + .input-group-btn .btn {
+        background-color: #fff;
+        color: #666;
+      }
+      &:focus + .input-group-btn .btn {
+        border-left-color: #fff;
+      }
+    }
+    .btn {
+      color: #999;
+      .border-radius(0, 2px, 0, 2px);
+    }
+  }
+  @media (min-width: @screen-sm-min) {
+    &.sidebar-mini.sidebar-collapse {
+      .sidebar-menu > li > .treeview-menu {
+        border-left: 1px solid @gray-lte;
+      }
+    }
+  }
+}
