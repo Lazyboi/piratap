@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 <div class="box box-solid">
-  
+
 </div>
 =======
 <?php
@@ -14,7 +14,7 @@ if(isset($_GET['template']))
 	$template=$_GET['template'];
 else
 	$template='report.xls';
-	
+
 //set absolute path to directory with template files
 $templateDir='..\examples\template\\';
 
@@ -83,4 +83,5 @@ $dompdf->render();
 $dompdf->stream();
 */
 //exit();
->>>>>>> a527ef6d1c6d7c92c1bdfb9b4504a95dd9de918a
+?>
+//>>>>>>> a527ef6d1c6d7c92c1bdfb9b4504a95dd9de918a

@@ -6,11 +6,11 @@
     "type": "project",
     "require": {
         "phpmailer/phpmailer": "~5.2",
-		"phpoffice/phpexcel" : "1.8.1",
-		"php" : ">=5.2.0",
-		"ext-xml" : "*",
-		"ext-xmlwriter" : "*",
-        "dompdf/dompdf": "^0.8.2"
+        "phpoffice/phpexcel" : "1.8.1",
+  "php" : ">=5.2.0",
+  "ext-xml" : "*",
+  "ext-xmlwriter" : "*",
+      "dompdf/dompdf": "^0.8.2"
     },
     "autoload": {
         "psr-4": {
